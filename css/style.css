@@ -1,0 +1,364 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+* {margin: 0; padding: 0;}
+html, body {
+	width: 100%;
+	height: 100%;
+	font-family: 'Noto Sans KR', sans-serif;
+	/*overflow: hidden;*/
+}
+ol, ul, li {list-style: none;}
+a {text-decoration: none;}
+.hdd {
+	display: none;;
+	overflow: hidden;
+	position: absolute;z-index: -1;
+	width: 0;height: 0;
+	padding: 0;margin: 0;font-size: 0;line-height: 0;
+	text-indent: -999999px;
+	visibility: hidden;
+	outline: none;
+}
+
+
+div#entrance {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	opacity: 1;
+	z-index: 5;
+	box-sizing: border-box;
+	overflow: hidden;
+	transition: all .5s;
+}
+div#entrance p {
+	position: absolute;
+	top: 26%;
+	left: 25.5%;
+	width: 8em;
+	height: 15em;
+	text-align: center;
+}
+div#entrance p img {
+	width: 100%;
+}
+div#entrance h1 {
+	position: absolute;
+	top: 17em;
+	left: 26.5%;
+	width: 12em;
+	font-size: 24px;
+	color: #333;
+	text-align: left;
+	font-weight: 100;
+}
+div#entrance h1 strong {
+	font-weight: 400;
+}
+div#entrance.off {
+	opacity: 0;
+}
+header, footer {
+	background-color: #fff;
+}
+
+/* 헤더 */
+header {
+	width: 13%;
+	height: 70%;
+	padding-left: 2%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
+header h2 {
+	width: 100%;
+	font-size: 18px;
+	color: #333;
+	text-align: center;
+	font-weight: 100;
+	padding-top: 70px;
+	cursor: pointer;
+}
+header h2 img {
+	width: 180px;
+}
+header h2 span {
+	display: block;
+	font-size: 16px;
+}
+header h2 strong {
+	font-weight: 400;
+}
+header nav {
+	width: 100%;
+}
+header nav ul.main_menu {
+	width: 100%;
+	padding-top: 60px;
+}
+ul.main_menu li.main_nav {
+	width: 100%;
+}
+ul.main_menu li.main_nav.myname {
+	padding-bottom: 20px;
+}
+ul.main_menu li.main_nav a {
+	display: block;
+	width: 100%;
+	text-align: right;
+	padding: 7px 40px 5px 0;
+	box-sizing: border-box;
+	font-size: 14px;
+	color: #333;
+	font-weight: 300;
+}
+
+/* 썸네일 아티클 */
+article.thum_wrap {
+	width: 10%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	padding-top: 8%;
+	background-color: #eee;
+	box-sizing: border-box;
+	z-index: 3;
+	transition: all .5s;
+}
+article.thum_wrap div#thum_box {
+	width: 90%;
+	height: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+article.thum_wrap div#thum_box h4 {
+	font-size: 16px;
+	margin-bottom: 10px;
+	
+}
+ul#thum_set>li {
+	width: 100%;
+	height: 25%;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+ul#thum_set>li p.img_thum{
+	width: 100%;
+	height: 122px;
+	background-color: royalblue;
+	overflow: hidden;
+}
+ul#thum_set>li span.img_tit {
+	display: block;
+	width: 100%;
+	height: 15%;
+	text-align: left;
+	padding-top: 3px;
+	font-size: 12px;
+}
+article.thum_wrap.on {
+	left: 15%;
+}
+
+/* 메인 기본 */
+main {
+	width: 100vw;
+	height: 100vh;
+	padding: 3% 4% 0 26%;
+	box-sizing: border-box;
+}
+
+/* 메인 첫화면 */
+section#main_index {
+	padding: 360px 0;
+	display: none;
+}
+section#main_index.on {
+	display: block;
+}
+section#main_index p {
+	font-size: 14px;
+	line-height: 2;
+}
+
+/* 작가 소개 */
+section#aboutme {
+	width: 100%;
+	padding:50px 0;
+	display: none;
+}
+section#aboutme.on {
+	display: block;
+}
+section#aboutme h2 {
+	font-size: 28px;
+	color:#333;
+}
+section#aboutme p {
+	padding: 20px 0;
+	font-size: 18px;
+	line-height: 1.8;
+	color:#333;
+}
+span.work_de {
+	display: block;
+	padding-left: 10px;
+	font-size: 14px;
+	line-height: 1.6;
+}
+ul#work_list {
+	padding-top: 50px;
+}
+ul#work_list h4 {
+	padding: 10px 0;
+	font-size: 18px;
+}
+ul#work_list li strong.work_year {
+	font-size: 14px;
+	margin-right: 10px;
+}
+ul#work_list li span.work_name {
+	font-size: 14px;
+}
+
+/* 이미지 슬라이드 */
+main div.imgwrap {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	position: relative;
+	display: none;
+}
+main div.imgwrap.on {
+	display: block;
+}
+main div.imgwrap p.arrow_set {
+	position: absolute;
+	right: 28px;
+	top: 45px;
+}
+main div.imgwrap p.arrow_set span {
+	display: inline-block;
+	padding: 0 7px;
+	font-size: 14px;
+	font-weight: 400;
+	color: #333;
+	cursor: pointer;
+}
+main div.imgwrap figure {
+	width: 100%;
+	height: 87%;
+	position: absolute;
+	left: 0;
+	bottom: 4%;
+}
+main div.imgwrap figure p.img_main {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+main div.imgwrap figure p.img_main img.image {
+	width: 100%;
+}
+main div.imgwrap figure h2 {
+	padding-left: 10px;
+	position: absolute;
+	left: 18px;
+	top: -5.2%;
+	font-size: 24px;
+	font-weight: 100;
+}
+
+/* 견적서 */
+#estimate {
+	padding: 50px 0;
+	display: none;
+}
+#estimate.on {
+	display: block;
+}
+#estimate h3 {
+	font-size: 28px;
+	color:#333;
+}
+#estimate form h4 {
+	padding: 40px 0 15px;
+	font-size: 18px;
+	color: #333;
+}
+#estimate form label {
+	font-size: 14px;
+	line-height: 40px;
+	margin-right: 10px;
+}
+#estimate form input.per_info {
+	padding: 5px;
+	width: 200px;
+	border: none;
+	border-bottom: 1px solid #333;
+}
+#estimate form table {
+	margin-bottom: 20px;
+}
+#estimate form table img {
+	width: 180px;
+	border-radius: 15px;
+}
+#estimate form table tr:nth-child(1) td {
+	height: 130px;
+	padding: 0 5px;
+}
+#estimate form table tr:nth-child(2) td {
+	font-size: 14px;
+	padding-left: 15px;
+}
+#estimate form input#message {
+	width: 500px;
+	height: 200px;
+	padding: 5px;
+}
+#estimate form button#sum_btn {
+	display: block;
+	margin-top: 20px;
+	width: 120px;
+	height: 36px;
+	background: #333;
+	color: #fff;
+	border: none;
+}
+
+/* 푸터 */
+footer {
+	width: 15%;
+	padding-left: 2%;
+	height: 30%;
+	position: fixed;
+	top: 70%;
+	left: 0;
+	z-index: 5;
+	box-sizing: border-box;
+}
+footer div.contact {
+	width: 100%;
+	padding: 120px 40px 0 0;
+	box-sizing: border-box;
+}
+footer div.contact ul {
+	width: 100%;
+	display: flex;
+	padding-left: 30px;
+	justify-content: end;
+	box-sizing: border-box;
+}
+footer div.contact ul li {
+	margin-left: 15px;
+}
+footer div.contact ul li img {
+	width: 28px;
+}
