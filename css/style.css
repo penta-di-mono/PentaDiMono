@@ -67,7 +67,7 @@ header, footer {
 
 /* 헤더 */
 header {
-	width: 13%;
+	width: 250px;
 	height: 70%;
 	padding-left: 2%;
 	position: fixed;
@@ -120,8 +120,8 @@ ul.main_menu li.main_nav a {
 
 /* 썸네일 아티클 */
 article.thum_wrap {
-	width: 10%;
-	height: 100%;
+	width: 192px;
+	height: 100vh;
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -163,7 +163,7 @@ ul#thum_set>li span.img_tit {
 	font-size: 12px;
 }
 article.thum_wrap.on {
-	left: 15%;
+	left: 300px;
 }
 
 /* 메인 기본 */
@@ -335,11 +335,11 @@ main div.imgwrap figure h2 {
 
 /* 푸터 */
 footer {
-	width: 15%;
-	padding-left: 2%;
+	width: 250px;
+	padding-left: 50px;
 	height: 30%;
 	position: fixed;
-	top: 70%;
+	top: 650px;
 	left: 0;
 	z-index: 5;
 	box-sizing: border-box;
