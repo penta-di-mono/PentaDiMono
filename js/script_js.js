@@ -52,7 +52,7 @@ function Thumnail(pic, title, name, wyear, length){
 var thumnail = [
     // 2015 : 0~7
     new Thumnail('img/thumnail/2015/2011_kbs.jpg', 'KBS 문화탐험-세계의 유산', 'kbs', '2011', 22),
-    new Thumnail('img/thumnail/2015/2012_chungdamdong.jpg', 'JTBC 청담동 살아요', 'chungdamdong', '2012', 6),
+    new Thumnail('img/thumnail/2015/2012_chungdamdong.jpg', 'JTBC 청담동 살아요', 'chungdamdong', '2012', 29),
     new Thumnail('img/thumnail/2015/2012_haccp.jpg', 'HACCP', 'haccp', '2012', 12),
     new Thumnail('img/thumnail/2015/2013_manlove.jpg', '뮤지컬 [남자가 사랑할 때]', 'manlove', '2013', 6),
     new Thumnail('img/thumnail/2015/2013_redis.jpg', '정부3.0 REIDS', 'redis', '2013', 9),
