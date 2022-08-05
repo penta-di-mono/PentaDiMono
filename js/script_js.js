@@ -94,78 +94,12 @@ var thumnail = [
 const thumtit = document.getElementById('thum_tit');
 const tliSet = document.getElementById('thum_set');
 
-$.fn.pivot = function(options){
-    var $target = $(this);
-    var $items = $target.children();
-    var $container = $target.wrap('<div></div>').parent();
-    var option = {width:173, height:142};
-
-    $target.css({
-        width: option.width,
-        height: $items.length * option.height,
-        position: 'absolute'
-    });
-
-    $items.css({
-        width: option.width,
-        height: option.height
-    });
-
-    $container.css({
-        overflow: 'hidden',
-        position: 'relative',
-        width: option.width,
-        height: option.height * 4.5
-    });
-
-    var originalTop = 0;
-    var oldTop = 0;
-    var newPosition = 0;
-    var isDown = false;
-    var liLenght = $('#thum_set').find('li').length;
- 
-    $target.on('mousedown', function(event){
-        oldTop = originalTop = event.clientY;
-
-        if(liLenght > 4){
-            isDown = true;
-            event.preventDefault();
-        }
-    });
-
-    $target.on('mousemove', function(event){
-        var thisTop = $(this).css('top');   //위로 올리면 마이너스
-        var maxTop = option.height * liLenght;  //전체 리스트의 높이
-        var transTop = -(maxTop - 639) + 'px';  //움직일수 있는 공간
-        // console.log(transTop);
-
-        if(isDown){
-            var distance = oldTop - event.clientY;
-            oldTop = event.clientY;
-            
-            $target.animate({top: '-=' + distance}, 0);
-            $target.stop(true); 
-        }
-    });
-
-    $target.on('mouseup', function(event){
-        isDown = false;
-        event.preventDefault();
-    });
-
-    $('.artwork').click(function(){
-        $target.css('top','0');
-        isDown=false;
-    });
-
-}
-
-
-$('.artwork').click(function(){
-    $('.thum_wrap').addClass('on');
-    $('#thum_set').empty();
-
+$('.artwork').on('click', function(){
+    var $tliSet = $('#thum_set');
     var year = $(this).text();
+
+    $('.thum_wrap').addClass('on');
+    $tliSet.empty();
 
     if(year <= 2015){
         thumtit.innerText = '2015년 이전 작업들';
@@ -203,6 +137,22 @@ $('.artwork').click(function(){
             tliSet.innerHTML += '<li class="thum_list"><p class="img_thum"><img src="'+ thumnail[i].pic+'" alt="'+ thumnail[i].title +'"></p><span class="img_tit">'+ thumnail[i].title +'</span><span class="file_name hdd">' + thumnail[i].name +'</span><span class="file_year hdd">' + thumnail[i].wyear +'</span><span class="file_length hdd">' + thumnail[i].length +'</span></li>';
         }
     }
+    var thumSet = $('#thum_set');
+    var thumLength = thumSet.children().length;
+    console.log(thumLength);
+
+    if(thumLength >4){
+        var swiper = new Swiper(".mySwiper", {
+            direction: "vertical",
+            slidesPerView: "auto",
+            scrollbar: {
+            el: ".swiper-scrollbar",
+            },
+            mousewheel: false,
+        });
+    }
+
+
 
     $('main').children().removeClass('on');
     $('.imgwrap').addClass('on');
@@ -273,9 +223,6 @@ $('.artwork').click(function(){
         });
     });
 
-    
-    $('#thum_set').pivot({
-        width: 173,
-        height: 143
-    });
+
 });
+

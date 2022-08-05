@@ -2,14 +2,18 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
 	<title>PENTA DI MONO | ILLUSTRATION·ARTWORK</title>
 
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
 	<link rel="stylesheet" href="css/style.css">
 
 	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
 	<div id="wrap">
@@ -39,16 +43,25 @@
 		<!-- 썸네일 -->
 		<article class="thum_wrap">
 			<div id="thum_box">
-				<h4 id="thum_tit"></h4>
-				<ul id="thum_set">
-					<!-- <li></li> -->
-				</ul>
+				<h4 id="thum_tit">썸네일 제목</h4>
+				<div class="back_rel">
+					<div class="swiper mySwiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<ul id="thum_set">
+									<!-- <li></li> -->
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</article>
 
 		<!-- 메인 -->
 		<main>
 			<section id="main_index" class="on">
+				<h2 class="hdd">메인 안내문</h2>
 				<div>
 					<p>· 삽화 작가 이현미의 작업물을 모아둔 포트폴리오 사이트입니다.</p>
 					<p>· 왼편의 메뉴를 클릭시 해당 년도의 작업물을 열람할 수 있습니다.</p>
@@ -61,13 +74,13 @@
 				<h2>이현미</h2>
 
 				<p>
-					영상에 쓰이는 소스 혹은 삽화를 그리는 작가 이현미입니다. 그 외에 여러가지 그림이 필요한 모든 작업을 진행합니다.<br>
+					영상에 쓰이는 소스 혹은 삽화를 그리는 작가 이현미입니다. 그 외에 여러가지 그림이 필요한 작업들을 진행합니다.<br>
 					왼쪽 하단의 편지봉투 아이콘을 클릭하시면 견적서를 작성하여 저에게 보낼 수 있습니다.
 				</p>
 
 				
 				<span class="work_de">· 2D 작업을 합니다.(벡터, 비트맵 작업 가능) 3D작업은 진행하지 않습니다.</span>
-				<span class="work_de">· 웹용, 영상용, 인쇄용 등 다양한 디바이스에 대응하는 작업을 합니다.</span>
+				<span class="work_de">· 웹용, 영상용, 인쇄용 등 다양한 디바이스에 대응하는 작업 가능합니다.</span>
 
 				
 				<ul id="work_list">
@@ -84,8 +97,8 @@
 				</p>
 
 				<figure>
-					<h2 class="img_num"><span id="year"></span>  <span id="work_tit"></span></h2>
-					<p class="img_main"><img id="workImg" src=""></p>
+					<h2 class="img_num"><span id="year"></span>  <span id="work_tit"></span><span class="hdd">작업이미지 제목</span></h2>
+					<p class="img_main"><img id="workImg" src="./img/ex_01.jpg" alt="작업한 이미지"></p>
 				</figure>
 			</div>
 
@@ -117,16 +130,16 @@
 							<td><img src="./img/ex_06.jpg" alt=""></td>
 						</tr>
 						<tr>
-							<td><input type="radio" name="content_op" id="content_op" value="only man">  사람만</td>
-							<td><input type="radio" name="content_op" id="content_op" value="man & g_back">  사람 + 그래픽 배경</td>
-							<td><input type="radio" name="content_op" id="content_op" value="man & back">  사람 + 풍경 배경</td>
-							<td><input type="radio" name="content_op" id="content_op" value="thing & g_back">  물건 + 그래픽 배경</td>
-							<td><input type="radio" name="content_op" id="content_op" value="thing & back">  물건 + 풍경 배경</td>
-							<td><input type="radio" name="content_op" id="content_op" value="only back">  배경만</td>
+							<td><input type="radio" name="content_op" id="con_only_man" value="only man">  사람만</td>
+							<td><input type="radio" name="content_op" id="con_g_back" value="man & g_back">  사람 + 그래픽 배경</td>
+							<td><input type="radio" name="content_op" id="con_back" value="man & back">  사람 + 풍경 배경</td>
+							<td><input type="radio" name="content_op" id="con_thing" value="thing & g_back">  물건 + 그래픽 배경</td>
+							<td><input type="radio" name="content_op" id="con_thing_back" value="thing & back">  물건 + 풍경 배경</td>
+							<td><input type="radio" name="content_op" id="con_only_back" value="only back">  배경만</td>
 						</tr>
 					</table>
 					
-					<input type="textarea" name="message" id="message" placeholder="구체적인 작업 내용을 적어주세요.">
+					<textarea name="message" id="message" placeholder="구체적인 작업 내용을 적어주세요."></textarea>
 					
 					<button type="submit" id="sum_btn">견적서 보내기</button>
 					
@@ -146,8 +159,10 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/script_drag.js"></script>
 	<script src="js/script_jq.js"></script>
 	<script src="js/script_js.js"></script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 </body>
 </html>
+

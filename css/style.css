@@ -135,16 +135,38 @@ article.thum_wrap div#thum_box {
 	width: 90%;
 	height: 90%;
 	margin: 0 auto;
-	overflow: hidden;
+	position: relative;
 }
 article.thum_wrap div#thum_box h4 {
 	font-size: 16px;
 	margin-bottom: 10px;
-	
+	position: absolute;
+	top: -30px;
+	left: 0;
+}
+div#thum_box .back_rel {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+div#thum_box .swiper {
+	width: 100%;
+	height: 705px;
+	overflow: hidden;
+}
+div#thum_box .swiper-slide {
+	height: auto;
+	box-sizing: border-box;
+}
+ul#thum_set {
+	width: 100%;
+	height: auto;
 }
 ul#thum_set>li {
 	width: 100%;
-	height: 25%;
+	height: 9rem;
 	margin-bottom: 10px;
 	cursor: pointer;
 }
@@ -255,21 +277,19 @@ main div.imgwrap figure {
 	width: 100%;
 	height: 87%;
 	position: absolute;
-	left: 0;
+	left: 4%;
 	bottom: 4%;
 }
 main div.imgwrap figure p.img_main {
 	width: 100%;
 	height: 100%;
-	text-align: center;
-}
-main div.imgwrap figure p.img_main img.image {
-	width: 100%;
+	text-align: left;
+	padding-left: 10px;
 }
 main div.imgwrap figure h2 {
 	padding-left: 10px;
 	position: absolute;
-	left: 18px;
+	left: 0;
 	top: -5.2%;
 	font-size: 24px;
 	font-weight: 100;
@@ -318,10 +338,11 @@ main div.imgwrap figure h2 {
 	font-size: 14px;
 	padding-left: 15px;
 }
-#estimate form input#message {
+#estimate form textarea#message {
 	width: 500px;
 	height: 200px;
 	padding: 5px;
+	resize: none;
 }
 #estimate form button#sum_btn {
 	display: block;
